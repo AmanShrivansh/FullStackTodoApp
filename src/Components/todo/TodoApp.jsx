@@ -26,8 +26,6 @@ function LoginComponent(){
         setPassword(event.target.value);
     }
 
-
-
     function handleSubmit(){
         if(username === 'in28minutes' && password=== 'dummy'){
             console.log("success");
@@ -40,25 +38,12 @@ function LoginComponent(){
         }
     } 
 
-    
-    function SuccessMessageComponent(){
-        if(showSuccessMessage){
-            return <div className='successMessage'>Authenticated successfully</div>
-        }
-        return null
-    }
-    
-    function ErrorMessageComponent(){
-        if(showErrorMessage){
-            return<div className='errorMessage'>Authenticated failed</div>
-        }
-        return null
-    } 
-
     return (
         <div className="Login">
-            <SuccessMessageComponent/>
-            <ErrorMessageComponent/>
+            {/* <SuccessMessageComponent/> */}
+            {/* <ErrorMessageComponent/> */}
+            {showSuccessMessage && <div className='successMessage'>Authenticated successfully</div>}
+            {showErrorMessage && <div className='errorMessage'>Authenticated failed</div>}
             <div className="LoginForm">
                 <div>
                     <label>User Name</label>
